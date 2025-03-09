@@ -1,22 +1,17 @@
 using UnityEngine;
 
-namespace Player
+public class PlayerController : MonoBehaviour
 {
-	public class PlayerController : MonoBehaviour
-	{
-	    [SerializeField] private int _speed = 5;
-	    
-	    public Transform target;
+    public Inventory Inventory { get; private set; }
+    private int _hp;
 
-	    void Update()
-	    {
-	        if (Input.GetKey(KeyCode.D)) {
-	            transform.position += Vector3.right * _speed;
-	        }
+    private void Awake()
+    {
+        Inventory = new Inventory();
+    }
 
-	        if (target == null) {
-	        	target.transform.position = Vector3.zero;
-	        }
-	    }
-	}
+    public void Heal(int amount)
+    {
+        _hp += amount;
+    }
 }

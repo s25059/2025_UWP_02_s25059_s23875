@@ -1,14 +1,11 @@
 using UnityEngine;
-[CreateAssetMenu(menuName="Enemy/New Enemy")]
-namespace Enemy{
-		public class EnemySO : ScriptableObject
+
+namespace Enemy
 {
-public string enemyName;
-
-
-
-
-
-public int damage;
-	}
-		}
+    [CreateAssetMenu(menuName = "Enemy/New Enemy")]
+    public class EnemySO : ScriptableObject
+    {
+        private string _enemyName;
+        private int _damage;
+    }
+}
